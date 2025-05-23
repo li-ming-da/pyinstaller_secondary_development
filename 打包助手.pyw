@@ -115,7 +115,7 @@ def ok_da_bao():
 def pyinstaller_ok():
     # 判断是否安装pyinstaller
     f_ = 0
-    result = os.popen(r'cd /d I:\tool\python\Python3.10.6-64\Scripts & pip list')
+    result = os.popen(r'pip list')
     res = result.read()
     for line in res.splitlines():
         if "pyinstaller" in line:
@@ -129,7 +129,7 @@ def pyinstaller_ok():
         # 若选择确认
         if r:
             messagebox.showinfo("即将安装","安装过程中可能程序未响应\n安装完成就好了")
-            os.system(r"cd /d I:\tool\python\Python3.10.6-64\Scripts & pip install pyinstaller")
+            os.system(r"pip install pyinstaller")
             var1.set("安装完成，现在可以进行打包了")
         # 若选择取消
         else:
